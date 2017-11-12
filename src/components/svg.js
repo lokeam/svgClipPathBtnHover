@@ -23,7 +23,7 @@ const CTA = (props) => {
   const { width, height, color, size, bgColor, bgColor2, stroke, cut, link, copy } = props;
 
   return (
-    <div className="cta" style={{"width": width + "px",
+    <div id="profile" className="cta profile" style={{"width": width + "px",
                                  "height": height + "px",
                                  "fontSize": size + "px"}}>
       <svg className="svg-graphic"
@@ -34,9 +34,9 @@ const CTA = (props) => {
            xlink="http://www.w3.org/1999/xlink"
            version="1.1">
         <defs>
-          <clipPath id="chopTLBR" className="chopTLBR">
+          <mask id="chopTLBR" className="chopTLBR">
               <rect x="-5" y="-10" height="50" width="200" />
-          </clipPath>
+          </mask>
         </defs>
 
           <polygon points={`${cut} 0,
@@ -50,7 +50,7 @@ const CTA = (props) => {
                       fill: bgColor
                     }} />
 
-          <polygon clipPath="url(#chopTLBR)" points={`${cut} 0,
+          <polygon mask="url(#chopTLBR)" points={`${cut} 0,
                           ${width} 0,
                           ${width} ${height - cut},
                           ${width - cut} ${height},
