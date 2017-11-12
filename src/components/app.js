@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import CTA from './svg';
 
-// import Crystal from './Crystal';
-import InsiderNav from './InsiderNav';
+import FlexNav from './FlexNav';
 import log from './log.js';
 
 class App extends Component {
@@ -10,15 +9,16 @@ class App extends Component {
   	super()
   }
   render() {
-    // console.log(Crystal);
-    var test = new InsiderNav();
-  	log('fromlog');
 
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('dom content loaded');
+      new FlexNav('#nav');
+    });
     return (
-      <div>
+      <div className="topnav" id="nav">
         <p>testing svg animations in react</p>
-        <CTA id="profile" className="profile nav" color="#fff"/>
-        <div id="nav" className="nav">
+        <button className="nav__burger">nav burger</button>
+        <div className="nav">
           <p>menu</p>
         </div>
       </div>

@@ -23,7 +23,7 @@ const CTA = (props) => {
   const { width, height, color, size, bgColor, bgColor2, stroke, cut, link, copy } = props;
 
   return (
-    <div id="profile" className="cta profile" style={{"width": width + "px",
+    <div id="profile" className="cta profile nav__burger" style={{"width": width + "px",
                                  "height": height + "px",
                                  "fontSize": size + "px"}}>
       <svg className="svg-graphic"
